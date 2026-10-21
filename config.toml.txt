@@ -1,0 +1,7 @@
+# Coloque este arquivo numa pasta chamada .streamlit ao lado do programa.
+[theme]
+base = "light"
+primaryColor = "#23364A"
+backgroundColor = "#EEF2F5"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1B2A38"
