@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Configuração da página para formato de celular
-st.set_page_config(page_title="MARCO DE RUMO", layout="centered")
+st.set_page_config(page_title="MARCO DE RUMO", page_icon="LOGOMARCA MARCO DE RUMO MODELADA.png", layout="centered")
 
 # Inserindo a Logomarca
 st.image("LOGOMARCA MARCO DE RUMO MODELADA.png", use_container_width=True)
