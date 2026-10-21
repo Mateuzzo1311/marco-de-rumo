@@ -15,8 +15,8 @@ DESCRICAO = "Simulador didático de física aplicada ao mototurismo"  # ajuste o
 st.markdown("""
 <style>
 .stApp {background:#EEF2F5; color:#1B2A38;}
-.block-container {padding-top:1rem; padding-left:1rem; padding-right:1rem;}
-.logo {text-align:center; margin-bottom:.4rem;}
+.block-container {padding-top:4rem; padding-left:1rem; padding-right:1rem;}
+.logo {text-align:center; margin:.6rem 0 .6rem; padding-top:.6rem;}
 .logo img {max-width:min(70%,300px); height:auto; display:inline-block;}
 .topo {background:#23364A; border-radius:10px; padding:.9rem .5rem; text-align:center; margin-bottom:.8rem;}
 .topo .nome {color:#F5F1E8; font-weight:800; letter-spacing:.08em; font-size:clamp(1.5rem,7.5vw,2.4rem); white-space:nowrap;}
@@ -161,9 +161,12 @@ fadiga = min(100, int((m - 1) * 45 + horas * 7 + (8 if frio else 0)))
 # ---------- 2. DIAGNÓSTICO ----------
 with dir_:
     secao("📊", "2. Diagnóstico Didático do Trecho")
+    no_tanque = tanque * pct / 100
+    composicao = f"tanque {no_tanque:g} L ({pct}% de {tanque:g} L)" + (" + galão 5 L" if galao else "")
+    caixa(f"⛽ <b>Combustível total: {litros:g} L</b> ({composicao})", "info")
     c1, c2, c3 = st.columns(3)
     with c1:
-        cartao("Autonomia possível", f"{baixo:.0f} a {alto:.0f} km", "com 10% de margem")
+        cartao("Autonomia possível", f"{baixo:.0f} a {alto:.0f} km", f"com {litros:g} L e 10% de margem")
     with c2:
         cartao("Consumo estimado", f"{kml:.1f} km/l", f"moto ideal: {kml_ideal:.1f} km/l")
     with c3:
